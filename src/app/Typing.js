@@ -1,12 +1,11 @@
-"use client"
+"use client";
 import React from "react";
-import Typed from 'typed.js'
+import Typed from 'typed.js';
 
-// Import the desired words
 class Typing extends React.Component {
   componentDidMount() {
     const options = {
-      strings: ["Mushtaq", "a Web-Developer","obsessed with making projects"],
+      strings: ["Mushtaq", "a Web-Developer", "obsessed with making projects"],
       typeSpeed: 20,
       backSpeed: 10,
       loop: true,
@@ -17,25 +16,24 @@ class Typing extends React.Component {
     // this.el refers to the <span> in the render() method
     this.typed = new Typed(this.el, options);
   }
-componentWillUnmount() {
+
+  componentWillUnmount() {
     // Please don't forget to cleanup animation layer
     this.typed.destroy();
   }
-  
+
   render() {
     return (
-      <>
-        <span className="font-vt323 retro-text" style={{ whiteSpace: "pre", color: "#ffd52c", fontSize: "x-large", display: "block", marginTop: "3rem",  }}>
-          Hi! I am {""}
-          <span
-            ref={(el) => {
-              this.el = el;
-            }}
-          />
-        </span>
-        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-      </>
+      <span className="font-vt323 retro-text" style={{ whiteSpace: "pre", color: "#ffd52c", fontSize: "x-large", display: "block", marginTop: "3rem" }}>
+        Hi! I am{" "}
+        <span
+          ref={(el) => {
+            this.el = el;
+          }}
+        />
+      </span>
     );
   }
 }
+
 export default Typing;
