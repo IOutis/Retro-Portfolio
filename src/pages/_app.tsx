@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-      <title>Mushtaq's PortFolio</title>
+        <title>Mushtaq&apos;s Portfolio</title>
       </Head>
       <Component {...pageProps} />
       <ScrollTo />
