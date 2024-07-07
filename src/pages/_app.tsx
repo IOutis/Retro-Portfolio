@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
-        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11" async></script>
       </Head>
       <Component {...pageProps} />
       <ScrollTo></ScrollTo>
