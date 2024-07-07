@@ -20,7 +20,7 @@ export default function ImageComp() {
         });
         setFade(false);
       }, 1000);
-    }, 5000);
+    }, 4000);
 
     return () => clearInterval(intervalId);
   }, []);
