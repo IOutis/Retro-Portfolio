@@ -86,7 +86,7 @@ export default function Home() {
               <div className="border-4 border-primary w-fit h-fit ml-[3vw] mr-[4vw]">
                 <ImageComp />
               </div>
-              <div className="w-fit pr-[0vw] pt-[4vh] md:w-[40vw] md:pt-[0vh]">
+              <div className="w-fit pr-[0vw] pl-[3vw] pt-[4vh] md:w-[40vw] md:pt-[0vh] md:pl-[0vw]">
                 <Description />
               </div>
               <div className="pt-[4vh] md:pt-[0vh] mr-[10vw]" style={{ marginLeft: "3vw", marginRight: "1vw" }}>
