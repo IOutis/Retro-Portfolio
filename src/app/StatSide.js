@@ -1,103 +1,158 @@
 "use client"
-import React,{useState} from 'react'
-import StatsComp from './StatsComp'
+import React, { useState } from 'react';
+import StatsComp from './StatsComp';
+import Cards from './Cards';
+
 export default function StatSide() {
-    const strength = `<h2>Strengths:</h2>
-<li><strong>Adaptive Thinker</strong> - I quickly adjust my strategies based on changing environments and data, ensuring continuous alignment with goals.</li>
-<li><strong>Strategic Foresight</strong> - I anticipate future trends and align my actions accordingly, ensuring long-term success.</li>
-<li><strong>Iterative Experimenter</strong> - I continuously test, refine, and improve ideas and processes through iterative experimentation.</li>
-<li><strong>Pattern Recognition</strong> - I identify underlying patterns and connections in data and experiences, uncovering valuable insights.</li>
-<li><strong>Narrative Builder</strong> - I craft compelling stories that effectively communicate complex ideas, engaging and informing my audience.</li>
+    const strength = [
+        {
+            name: 'Adaptive Thinker',
+            description: 'I quickly adjust my strategies based on changing environments and data, ensuring continuous alignment with goals.'
+        },
+        {
+            name: 'Strategic Foresight',
+            description: 'I anticipate future trends and align my actions accordingly, ensuring long-term success.'
+        },
+        {
+            name: 'Iterative Experimenter',
+            description: 'I continuously test, refine, and improve ideas and processes through iterative experimentation.'
+        },
+        {
+            name: 'Pattern Recognition',
+            description: 'I identify underlying patterns and connections in data and experiences, uncovering valuable insights.'
+        },
+        {
+            name: 'Narrative Builder',
+            description: 'I craft compelling stories that effectively communicate complex ideas, engaging and informing my audience.'
+        }
+    ];
 
-`;
+    const skillsData = [
+        {
+            name: 'Django',
+            level: 'Intermediate',
+            description: 'Developed backend systems using Django, integrated with Django-Celery and Django-Celery-Beats for task scheduling.'
+        },
+        {
+            name: 'Front-End (HTML, CSS, JS)',
+            level: 'Intermediate (Learning React)',
+            description: 'Developed responsive and interactive web interfaces using HTML, CSS, and JavaScript. Currently learning React.js.'
+        },
+        {
+            name: 'Python',
+            level: 'Advanced',
+            description: 'Extensive experience in Python, including backend development.'
+        },
+        {
+            name: 'C Language',
+            level: 'Advanced',
+            description: 'Developed system-level programs and algorithms using C.'
+        },
+        {
+            name: 'Java',
+            level: 'Intermediate',
+            description: 'Developed applications using Java, focusing on object-oriented programming principles and application development.'
+        }
+    ];
 
-    const [mainstr,setMainstr] = useState(strength);
-    const skills = `<h2>Skills:</h2>  
-1. Django
-    <strong>Proficiency Level:</strong> Intermediate
-    <strong>Relevant Experience:</strong> Developed backend systems using Django, integrated with Django-Celery and Django-Celery-Beats for task scheduling.
-    <strong>Skills Used:</strong> Django, Django-Celery, Django-Celery-Beats
+    const projects = [
+        {
+            name: 'Student Synergy',
+            description: 'A website designed to enhance student productivity. Built using Django for the backend, with Django Celery and Django Celery Beats for notifications.',
+            githubLink: 'https://github.com/IOutis/Learners-Edge'
+        },
+        {
+            name: 'Chatbot',
+            description: 'A React project utilizing the Gemini API for creating interactive chatbots.',
+            githubLink: 'https://github.com/IOutis/Gemini_chabot_react'
+        },
+        {
+            name: 'Crime Case Management System',
+            description: 'A straightforward system for managing crime cases, developed using Java Swing and connected to MySQL.',
+            githubLink: 'https://github.com/IOutis/Crime-Case-Management'
+        },
+        {
+            name: 'Vocal Language Translator',
+            description: 'Contributed to a group project developing a language translator supporting over 100 languages. Implemented speech recognition for input.',
+            githubLink: 'https://github.com/Yash5588/Vocal-Language-Translator'
+        }
+    ];
 
-2. Front-End (HTML, CSS, JS)
-    <strong>Proficiency Level:</strong> Intermediate (Learning React)
-    <strong>Relevant Experience:</strong> Developed responsive and interactive web interfaces using HTML, CSS, and JavaScript. Currently learning React.js.
-    <strong>Skills Used:</strong> HTML, CSS, JavaScript
+    const education = [
+        {
+            name: 'Bachelor of Engineering',
+            description: 'Currently pursuing my second year in Information Technology at Vasavi College of Engineering.',
+            cgpa: 'CGPA : 8.7',
+        },
+        {
+            name: 'Intermediate',
+            description: 'Completed Intermediate education at Iqbalia Junior College with 96.7%',
+            cgpa: 'Percentage : 96.7',
+        },
+        {
+            name: 'Secondary School Education',
+            description: 'Completed schooling at Kakatiya Vidya Niketan High School with a 10 GPA.',
+            cgpa: 'CGPA : 10',
+        }
+    ];
 
-3. Python
-    <strong>Proficiency Level:</strong> Advanced
-    <strong>Relevant Experience:</strong> Extensive experience in Python, including backend development.
-    <strong>Skills Used:</strong> Python
+    const [mainstr, setMainstr] = useState(strength);
+    const [activeCategory, setActiveCategory] = useState('strengths');
+    const [menuOpen, setMenuOpen] = useState(false);
 
-4. C Language
-    <strong>Proficiency Level:</strong> Advanced
-    <strong>Relevant Experience:</strong> Developed system-level programs and algorithms using C.
-    <strong>Skills Used:</strong> C Language
-
-5. Java
-    <strong>Proficiency Level:</strong> Intermediate
-    <strong>Relevant Experience:</strong> Developed applications using Java, focusing on object-oriented programming principles and application development.
-    <strong>Skills Used:</strong> Java
-`;
-
-
-   
-
-   const projects = `<strong>Projects</strong>:
-1. <a href="https://github.com/IOutis/Learners-Edge" target="_blank"><em>Student Synergy</em></a>: A website designed to enhance student productivity. Built using Django for the backend, with Django Celery and Django Celery Beats for notifications.
-   <a href="https://github.com/IOutis/Learners-Edge" target="_blank">View on GitHub 👈</a>
-
-2. <a href="https://github.com/IOutis/Gemini_chabot_react" target="_blank"><em>Chatbot</em></a>: A React project utilizing the Gemini API for creating interactive chatbots.
-   <a href="https://github.com/IOutis/Gemini_chabot_react" target="_blank">View on GitHub 👈</a>
-
-3. <a href="https://github.com/IOutis/Crime-Case-Management" target="_blank"><em>Crime Case Management System</em></a>: A straightforward system for managing crime cases, developed using Java Swing and connected to MySQL.
-   <a href="https://github.com/IOutis/Crime-Case-Management" target="_blank">View on GitHub 👈</a>
-
-4. <a href="https://github.com/Yash5588/Vocal-Language-Translator" target="_blank"><em>Vocal Language Translator</em></a>: Contributed to a group project developing a language translator supporting over 100 languages. Implemented speech recognition for input.
-   <a href="https://github.com/Yash5588/Vocal-Language-Translator" target="_blank">View on GitHub 👈</a>   `
-
-
-   
-    const edu = `<strong><h3>Education:</h3></strong>
-<h4>Bachelor of Engineering</h4>
-<p>Currently pursuing my second year in Information Technology at Vasavi College of Engineering. CGPA:8.7</p>
-<strong><h4>Intermediate</h4></strong>
-<p>Completed Intermediate education at Iqbalia Junior College with 96.7%</p>
-<strong><h4>Secondary School Education</h4></strong>
-<p>Completed schooling at Kakatiya Vidya Niketan High School with a 10 GPA.</p>\n`
-    const passString=(a)=>{
-        if (a === "strengths"){
+    const passString = (category) => {
+        setActiveCategory(category);
+        setMenuOpen(false)
+        if (category === "strengths") {
             setMainstr(strength);
-            console.log("In strengths;")
-        }
-        else if (a==="skills"){
-            setMainstr(skills)
-        }
-        else if (a==="Projects"){
+        } else if (category === "skills") {
+            setMainstr(skillsData);
+        } else if (category === "Projects") {
             setMainstr(projects);
+        } else if (category === "education") {
+            setMainstr(education);
         }
-        else if (a==="edu"){
-            setMainstr(edu);
-            }
-    }
-  return (
-    <div style={{ display: 'flex', flexDirection: 'row', paddingLeft:"5vw", marginLeft:"0vw", }}>
-        <div style={{paddingRight:"3vw"}}>
-            <div className="flex items-center justify-center border-2 border-primary p-4 hover:bg-primary group transition duration-300 ease-in" onClick={()=>passString("strengths")}>
-                <button  className="retro-text text-primary font-vt323 text-center group-hover:text-black group-hover:text-lg" style={{fontSize:"22px"}}> Strengths</button>
-            </div>
+    };
 
-            <div className="flex items-center justify-center border-2 border-primary p-4 hover:bg-primary group transition duration-300 ease-in" onClick={()=>passString("skills")}>
-                <button  className="retro-text text-primary font-vt323 text-center group-hover:text-black group-hover:text-lg" style={{fontSize:"22px"}}> Skills</button>
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
+
+    const getButtonClasses = (category) => {
+        const baseClasses = "border-2 border-primary p-4 group transition duration-300 ease-in cursor-pointer";
+        const activeClasses = "text-black bg-primary";
+        const hoverClasses = "hover:text-black hover:bg-primary";
+        return activeCategory === category ? `${baseClasses} ${activeClasses}` : `${baseClasses} ${hoverClasses}`;
+    };
+
+    return (
+        <div style={{ display: 'flex', flexDirection: 'row', paddingLeft: "5vw", marginLeft: "0vw" }}>
+            <div style={{ paddingRight: "3vw" }}>
+                <div className="md:hidden" onClick={toggleMenu}>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 24 24"
+style={{fill:"#ffda47"}}>
+<path d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"></path>
+</svg>
+                    
+                </div>
+                <div className={`flex flex-row sm:flex md:flex-col ${menuOpen ? 'flex-col' : 'hidden'}`}>
+                    <div id='strengths' className={`flex items-center w-20 md:w-36 justify-center ${getButtonClasses("strengths")}`} onClick={() => passString("strengths")}>
+                        <p className='text-sm md:text-xl'>Strengths</p>
+                    </div>
+                    <div id='skills' className={`flex items-center w-20 md:w-36 justify-center ${getButtonClasses("skills")}`} onClick={() => passString("skills")}>
+                        <p className='text-sm md:text-xl'>Skills</p>
+                    </div>
+                    <div id='Projects' className={`flex items-center w-20 md:w-36 justify-center ${getButtonClasses("Projects")}`} onClick={() => passString("Projects")}>
+                        <p className='text-sm md:text-xl'>Projects</p>
+                    </div>
+                    <div id='edu' className={`flex items-center w-20 md:w-36 justify-center ${getButtonClasses("education")}`} onClick={() => passString("education")}>
+                        <p className='text-sm md:text-xl'>Education</p>
+                    </div>
+                </div>
             </div>
-            <div className="flex items-center justify-center border-2 border-primary p-4 hover:bg-primary group transition duration-300 ease-in" onClick={()=>passString("Projects")}>
-                <button   className="retro-text text-primary font-vt323 text-center group-hover:text-black group-hover:text-lg" style={{fontSize:"22px"}}> Projects</button>
-            </div>
-            <div className="flex items-center justify-center border-2 border-primary p-4 hover:bg-primary group transition duration-300 ease-in" onClick={()=>passString("edu")}>
-                <button   className="retro-text text-primary font-vt323 text-center group-hover:text-black group-hover:text-lg" style={{fontSize:"22px"}}> Education</button>
+            <div className="custom-scrollbar overflow-y-scroll" style={{ maxHeight: "60vh", position: 'relative', zIndex: '1' }}>
+                <Cards skills={mainstr} category={activeCategory.toLocaleUpperCase()}></Cards>
             </div>
         </div>
-      <div className="custom-scrollbar overflow-y-scroll" style={{maxHeight:"60vh"}}><StatsComp key={mainstr} strings={[mainstr]} /></div>
-      
-    </div>
-  )
+    );
 }

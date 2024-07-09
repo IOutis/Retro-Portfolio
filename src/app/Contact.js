@@ -1,39 +1,11 @@
 "use client"
 import React from 'react';
-import Cards from './cards'
 
 export default function Contact() {
-  // const skills = [
-  //   {
-  //     name: 'Django',
-  //     level: 'Intermediate',
-  //     description: 'Developed backend systems using Django, integrated with Django-Celery and Django-Celery-Beats for task scheduling.'
-  //   },
-  //   {
-  //     name: 'Front-End (HTML, CSS, JS)',
-  //     level: 'Intermediate (Learning React)',
-  //     description: 'Developed responsive and interactive web interfaces using HTML, CSS, and JavaScript. Currently learning React.js.'
-  //   },
-  //   {
-  //     name: 'Python',
-  //     level: 'Advanced',
-  //     description: 'Extensive experience in Python, including backend development.'
-  //   },
-  //   {
-  //     name: 'C Language',
-  //     level: 'Advanced',
-  //     description: 'Developed system-level programs and algorithms using C.'
-  //   },
-  //   {
-  //     name: 'Java',
-  //     level: 'Intermediate',
-  //     description: 'Developed applications using Java, focusing on object-oriented programming principles and application development.'
-  //   }
-  // ];
   
   return (
     <div>
-    <div style={{ display: 'flex', flexDirection: 'row', marginLeft:"10vw" }}>
+    <div className='flex flex-col justify-center overflow-y-scroll ml-[3vw] overflow-x-hidden custom-scrollbar md:overflow-y-hidden md:flex-row md:ml-[10vw] md:justify-stretch'>
       <div style={{ marginRight: '11vw' }}>
         <span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
@@ -74,7 +46,6 @@ export default function Contact() {
       
 
     </div>
-    
     </div>
   );
 }

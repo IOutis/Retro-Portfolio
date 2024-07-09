@@ -84,3 +84,59 @@ body {
   transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
   z-index: 10;
 }
+
+
+.cards-container {
+  display: grid;
+  
+  /* Adjust row height as needed */
+
+
+  gap: 20px;
+  padding: 10px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  justify-content: stretch;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 2.6s ease-in-out; /* Smooth transition for height change */
+}
+
+.card details {
+  max-height: 150px; /* Adjust this height to suit your design */
+  overflow: hidden;
+  transition: max-height 1.3s ease-in-out; /* Smooth transition for max-height */
+}
+
+.card details[open] {
+  max-height: 500px; /* Adjust this height to accommodate expanded content */
+  overflow: auto; /* Allow scroll when expanded */
+}
+
+details > summary::after {
+  content: "Expand +";
+}
+
+/* Switches the content when it is open */
+details[open] > summary::after {
+  content: "Collapse -";
+}
+
+/* Removes the default arrow on Chrome */
+details > summary::-webkit-details-marker {
+  display: none;
+  
+}
+
+details > summary {
+  list-style: none;
+  cursor: pointer;
+  
+}
+
+

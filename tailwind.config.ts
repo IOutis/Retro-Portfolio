@@ -46,6 +46,8 @@ const config: Config = {
           },
           { values: theme('textShadow') }
         )
-      }),],
+      }),
+      require('@tailwindcss/aspect-ratio'),
+    ],
 };
 export default config;

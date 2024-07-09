@@ -24,14 +24,17 @@ class Typing extends React.Component {
 
   render() {
     return (
-      <span className="font-vt323 retro-text" style={{ whiteSpace: "pre", color: "#ffd52c", fontSize: "x-large", display: "block", marginTop: "3rem" }}>
+      <div className="container flex justify-center items-center p-[3vw]" style={{
+        
+      }}>
+      <span className="font-vt323 retro-text self-center font-extrabold text-md md:text-2xl overflow: hidden;" style={{ whiteSpace: "pre-wrap", color: "#ffd52c", display: "inline-block", marginTop: "3rem", justifyContent:"center" }}>
         Hi! I am{" "}
         <span
           ref={(el) => {
             this.el = el;
           }}
         />
-      </span>
+      </span></div>
     );
   }
 }

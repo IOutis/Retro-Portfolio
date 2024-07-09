@@ -27,8 +27,8 @@ componentWillUnmount() {
   render() {
     return (
       <>
-        <span className="font-vt323 retro-text"
-          style={{ whiteSpace: "pre-wrap" ,color: "#ffd52c", fontSize:"20px",}}
+        <span className="font-vt323 retro-text text-sm md:text-lg " 
+          style={{ whiteSpace: "pre-wrap" ,color: "#ffd52c",}}
           ref={(el) => {
             this.el = el;
           }}

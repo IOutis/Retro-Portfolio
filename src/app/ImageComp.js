@@ -26,13 +26,14 @@ export default function ImageComp() {
   }, []);
 
   return (
-    <div>
-      <Image
+    <div  style={{ aspectRatio: 1/1 ,width:"fit-content"}}>
+      <Image 
         src={image}
         alt="M"
         width={270}
         height={200}
-        className={`img-transition ${fade ? 'fade-out' : ''}`}
+        className={`w-[270] h-[200] md:w-[900] img-transition ${fade ? 'fade-out' : ''}`}
+        
       />
     </div>
   );
