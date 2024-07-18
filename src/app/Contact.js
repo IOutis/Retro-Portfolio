@@ -46,6 +46,9 @@ export default function Contact() {
       
 
     </div>
+      <div className='flex flex-row justify-center items-center mt-[3vh] md:mt-[6vh] md:text-xl'>
+        <p>You can view my Resume<a href="https://drive.google.com/file/d/1yebQw5Kasu3nTUw2BK71_JQc8nVzn1D1/view?usp=sharing" target='_blank'> Here⬅️</a></p>
+      </div>
     </div>
   );
 }
