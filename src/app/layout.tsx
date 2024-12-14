@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +19,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} m-0 p-0 w-screen min-h-screen overflow-x-hidden retro-text font-vt323 w-screen h-full overflow-y-scroll overflow-x-hidden custom-scrollbar md:overflow-hidden`}>{children}
       <SpeedInsights />
-      <Analytics />
       </body>
     </html>
   );
