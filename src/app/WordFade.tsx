@@ -43,34 +43,36 @@ export function WordFadeIn({
   const lines = text.split('\n');
 
   // Process each line to get words while preserving line breaks
-  const processedContent: ContentItem[] = lines.flatMap((line, lineIndex) => {
-    // If the line is empty, return two line breaks
+  // Process each line to get words while preserving line breaks
+  const processedContent: ContentItem[] = lines.flatMap((line, lineIndex): ContentItem[] => {
+    // If the line is empty, return two line breaks as separate items
     if (line.trim() === '') {
       return [
         {
           type: 'break',
           content: '\n',
-          id: `br1-${lineIndex}`
-        },
+          id: `br1-${lineIndex}`,
+        } as BreakItem,
         {
           type: 'break',
           content: '\n',
-          id: `br2-${lineIndex}`
-        }
+          id: `br2-${lineIndex}`,
+        } as BreakItem,
       ];
     }
-
+  
     // Split the line into words
     const words = line.split(/\s+/).filter(word => word.length > 0);
-
+  
     // Process each word in the line
     return words.map((word, wordIndex) => ({
       type: 'word',
       content: word,
       id: `${lineIndex}-${wordIndex}`,
-      needsBreak: word.endsWith(':') || word === 'Mushtaq' || word === 'I.T.'
-    }));
+      needsBreak: word.endsWith(':') || word === 'Mushtaq' || word === 'I.T.',
+    } as WordItem));
   });
+  
 
   return (
     <motion.div
