@@ -26,15 +26,17 @@ componentWillUnmount() {
   
   render() {
     return (
-      <>
-        <span className="font-vt323 retro-text text-sm md:text-lg " 
-          style={{ whiteSpace: "pre-wrap" ,color: "#ffd52c",}}
+      <div className="border-primary border-2 p-2">
+        <span className="  text-sm md:text-lg  " 
+          style={{ fontFamily: "monospace",whiteSpace: "pre-wrap" ,color: "#ffd52c",fontVariant:'oldstyle-nums'}}
           ref={(el) => {
             this.el = el;
           }}
         />
-      </>
+      </div>
     );
   }
 }
 export default Description;
+
+

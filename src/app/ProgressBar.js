@@ -1,10 +1,9 @@
 "use client"
 import React from 'react'
-import './customScrollbar.css';
 export default function ProgressBar() {
   return (
     <div>
-      <div className=' md:overflow-y-hidden space-y-5 overflow-hidden custom-scrollbar w-[66vw] max-h-[70vh] md:w-[20vw] pb-[10vh] md:pr-[0vw] md:'>
+      <div className=' md:overflow-y-hidden space-y-5 overflow-hidden custom-scrollbar md:w-[20vw] pb-2  xs:border-primary xs:border-2'>
         <div>
           <div className="mb-2 flex justify-between items-center">
             <h3 className="text-m font-semibold retro-text font-vt323 text-primary" style={{paddingLeft:"1vw",}}>Django, Celery, Celery-Beats</h3>

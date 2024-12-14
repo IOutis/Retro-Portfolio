@@ -1,21 +1,74 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+   
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  
+  body {
+    @apply bg-background ;
+  }
+}
+
 
 :root {
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 0, 0, 0;
   --background-end-rgb: 0, 0, 0;
 }
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply dark bg-background;
 }
 
 @layer utilities {
@@ -47,7 +100,7 @@ body {
 @layer components {
   .old-crt-monitor {
     box-shadow: inset 0px 0px 2rem;
-    background-image: linear-gradient(0deg, #0000 10%, rgba(255, 255, 255, 0.09) 90%, #0000 100%);
+    background-image: linear-gradient(0deg, #0000 10%, #ffda4715 100%, #0000 100%);
     animation: crtAnimation 100s linear infinite;
     background-size: 100% 80%;
   }
@@ -97,11 +150,14 @@ body {
 }
 
 .card {
+  background-color: #111;
   position: relative;
+  width:fit-content;
+  height: fit-content;
   display: flex;
   justify-content: stretch;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #ffda47;
   border-radius: 5px;
   overflow: hidden;
   transition: all 2.6s ease-in-out; /* Smooth transition for height change */
@@ -139,4 +195,23 @@ details > summary {
   
 }
 
+
+.custom-scrollbar {
+  scrollbar-width:thin;
+  scrollbar-color: #b89406 #2d3748;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #2d3748;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #b89406;
+  border-radius: 10px;
+  border: 2px solid #2d3748;
+}
 

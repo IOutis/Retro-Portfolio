@@ -29,32 +29,51 @@ export default function StatSide() {
 
     const skillsData = [
         {
-            name: 'Django',
-            level: 'Intermediate',
-            description: 'Developed backend systems using Django, integrated with Django-Celery and Django-Celery-Beats for task scheduling.'
-        },
-        {
-            name: 'Front-End (HTML, CSS, JS)',
-            level: 'Intermediate (Learning React)',
-            description: 'Developed responsive and interactive web interfaces using HTML, CSS, and JavaScript. Currently learning React.js.'
-        },
-        {
             name: 'Python',
-            level: 'Advanced',
-            description: 'Extensive experience in Python, including backend development.'
+            level: 'Intermediate',
+            description: 'Proficient in Python backend development and data processing. Strong focus on writing efficient, maintainable code using modern Python features.'
         },
         {
-            name: 'C Language',
-            level: 'Advanced',
-            description: 'Developed system-level programs and algorithms using C.'
+            name: 'Frontend Development',
+            level: 'Intermediate',
+            description: 'Proficient in creating responsive web interfaces using HTML5, CSS3, and JavaScript. Experience with modern CSS frameworks including Tailwind CSS and Bootstrap.'
+        },
+        {
+            name: 'React & Next.js',
+            level: 'Intermediate',
+            description: 'Building dynamic web applications using React ecosystem, including state management, hooks, and server-side rendering with Next.js.'
+        },
+        {
+            name: 'C/C++',
+            level: 'Intermediate',
+            description: 'Strong foundation in system programming, data structures, and algorithm implementation using C/C++. Experience in performance optimization.'
         },
         {
             name: 'Java',
             level: 'Intermediate',
-            description: 'Developed applications using Java, focusing on object-oriented programming principles and application development.'
+            description: 'Experienced in OOP principles and Java application development, including multithreading and design patterns.'
+        },
+        {
+            name: 'Django',
+            level: 'Intermediate',
+            description: 'Building scalable web applications with Django, including REST APIs, authentication systems, and task scheduling with Celery.'
+        },
+        {
+            name: 'Node.js',
+            level: 'Intermediate',
+            description: 'Developing server-side applications and APIs using Node.js ecosystem, with focus on Express.js and async programming.'
+        },
+        {
+            name: 'Databases',
+            level: 'Intermediate',
+            description: 'Proficient in both SQL (MySQL) and NoSQL (MongoDB) databases, including schema design, optimization, and data modeling.'
+        },
+        {
+            name: 'Machine Learning',
+            level: 'Basic',
+            description: 'Experience in developing and deploying ML models using popular frameworks, with focus on practical applications and model optimization.'
         }
     ];
-
     const projects = [
         {
             name: 'Student Synergy',
@@ -126,16 +145,16 @@ export default function StatSide() {
     };
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'row', paddingLeft: "5vw", marginLeft: "0vw" }}>
-            <div style={{ paddingRight: "3vw" }}>
+        <div style={{ display: 'flex', flexDirection: 'row', paddingLeft: "5vw", marginLeft: "1vw" }}>
+            <div style={{ justifyContent:'space-around'}}>
                 <div className="md:hidden" onClick={toggleMenu}>
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 24 24"
-style={{fill:"#ffda47"}}>
-<path d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"></path>
-</svg>
+                    style={{fill:"#ffda47"}}>
+                    <path d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"></path>
+                    </svg>
                     
                 </div>
-                <div className={`flex flex-row sm:flex md:flex-col ${menuOpen ? 'flex-col' : 'hidden'}`}>
+                <div className={`flex flex-col sm:flex md:flex-col ${menuOpen ? 'flex-col' : 'hidden'} `}>
                     <div id='strengths' className={`flex items-center w-20 md:w-36 justify-center ${getButtonClasses("strengths")}`} onClick={() => passString("strengths")}>
                         <p className='text-sm md:text-xl'>Strengths</p>
                     </div>
@@ -150,7 +169,7 @@ style={{fill:"#ffda47"}}>
                     </div>
                 </div>
             </div>
-            <div className="custom-scrollbar overflow-y-scroll" style={{ maxHeight: "60vh", position: 'relative', zIndex: '1' }}>
+            <div className="" style={{ maxHeight: "60vh", position: 'relative', zIndex: '1' }}>
                 <Cards skills={mainstr} category={activeCategory.toLocaleUpperCase()}></Cards>
             </div>
         </div>

@@ -8,6 +8,9 @@ import StatSide from "./StatSide";
 import ProgressBar from "./ProgressBar";
 import ImageComp from "./ImageComp";
 import Contact from "./Contact";
+import { HyperText } from "./HyperText";
+import WordFadeIn from "./WordFade";
+
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("#home");
@@ -18,14 +21,15 @@ export default function Home() {
 
   return (
     <div
-      className="container old-crt-monitor retro-text font-vt323 h-full overflow-y-scroll overflow-x-hidden custom-scrollbar md:overflow-hidden"
+      className="dark max-w-full container old-crt-monitor retro-text font-vt323 w-screen h-full overflow-y-scroll overflow-x-hidden custom-scrollbar md:overflow-hidden"
       style={{
         maskImage: "linear-gradient(to bottom, #0005 50%, #000 50%)",
         maskSize: "100% 2px",
+        width:'100%'
       }}
     >
       <main
-        className="max-w-[1000px] mx-auto px-4 sm:max-w-[90%] md:max-w-[90%] lg:max-w-[90%] xl:max-w-[90%]"
+        className="max-w-7xl mx-auto px-4 pr-4 relative min-h-screen "
         style={{ paddingTop: "-10vh", margin: "auto", width: "100vw", height: "100vh" }}
       >
         <div
@@ -43,13 +47,13 @@ export default function Home() {
         
           }}
         >
-          <Typing />
+          <HyperText  />
         </div>
         <ScrollTo setActiveSection={handleClick} />
         <br />
         <div
-          className="retro-text flex justify-between md:justify-between md:pl-[0vw] "
-          style={{ width: "75vw", paddingTop: "3vh", paddingBottom: "6vh", paddingLeft: "10vw" }}
+          className="retro-text flex justify-between md:justify-around md:pl-[0vw] w-full"
+          style={{ paddingTop: "3vh", paddingBottom: "6vh", }}
         >
           {["#home", "#stats", "#contact"].map((section) => (
             <a
@@ -59,13 +63,13 @@ export default function Home() {
               onClick={() => handleClick(section)}
             >
               <div
-                className={`flex items-center justify-center border-2 border-primary p-4 ${
-                  activeSection === section ? "bg-primary" : "hover:bg-primary group"
+                className={`flex items-center justify-center border-2 border-primary p-4  ${
+                  activeSection === section ? "bg-primary" : "hover:bg-primary hover:text-tertiary group"
                 } transition duration-300 ease-in`}
                 style={{ height: 10 }}
               >
                 <button
-                  className={`text-primary text-shadow-custom font-vt323 text-center  text-md md:text-[22px] ${
+                  className={`text-primary text-shadow-custom font-vt323 text-center  text-md md:text-[22px] hover:text-tertiary ${
                     activeSection === section ? "text-tertiary" : "text-primary"
                   }`}
                 >
@@ -79,21 +83,21 @@ export default function Home() {
 
         <section
           id="home"
-          className="flex justify-stretch w-fit h-fit md:w-fit md:h-fit md:overflow-hidden overflow-y-scroll custom-scrollbar overflow-x-hidden"
+          className="flex justify-stretch w-fit h-fit md:w-full md:h-fit md:overflow-hidden overflow-y-scroll custom-scrollbar overflow-x-hidden"
         >
-          <div>
-            <div className="flex flex-col md:flex-row justify-center">
-              <div className="border-4 border-primary w-fit h-fit ml-[3vw] mr-[4vw]">
+          
+            <div className="flex flex-col md:flex-row justify-evenly">
+              <div className="border-4 border-primary w-fit h-fit ">
                 <ImageComp />
               </div>
-              <div className="w-fit pr-[0vw] pl-[3vw] pt-[4vh] md:w-[40vw] md:pt-[0vh] md:pl-[0vw]">
-                <Description />
+              <div className="md:w-[500px] border-2 border-primary p-2">
+                <WordFadeIn />
               </div>
-              <div className="pt-[4vh] md:pt-[0vh] mr-[10vw]" style={{ marginLeft: "3vw", marginRight: "1vw" }}>
+              <div className="p-4 border-primary border-2 " >
                 <ProgressBar />
               </div>
             </div>
-          </div>
+         
         </section>
 
         <section id="stats" className="section" style={{ marginLeft: "0vw" }}>

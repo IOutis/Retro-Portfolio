@@ -11,7 +11,7 @@ class MyDocument extends Document {
           <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
           <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11" async></script>
         </Head>
-        <body>
+        <body className='dark'>
           <Main />
           <NextScript />
         </body>
