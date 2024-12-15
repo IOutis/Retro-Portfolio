@@ -95,7 +95,7 @@ export function HyperText({
   }, [animateOnLoad]);
 
   return (
-    <div className="flex scale-100 cursor-default overflow-hidden py-2 md:text-2xl font-mono font-bold">
+    <div className="flex justify-around text-center scale-100 cursor-default overflow-hidden py-2 md:text-2xl font-mono font-bold">
       <AnimatePresence mode="wait">
         <span className="font-system">
           HI! I AM{" "}

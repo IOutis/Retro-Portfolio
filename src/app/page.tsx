@@ -11,10 +11,9 @@ import Contact from "./Contact";
 import { HyperText } from "./HyperText";
 import WordFadeIn from "./WordFade";
 
-
 export default function Home() {
   const [activeSection, setActiveSection] = useState("#home");
-
+  
   const handleClick = (section: React.SetStateAction<string>) => {
     setActiveSection(section);
   };
@@ -25,86 +24,65 @@ export default function Home() {
       style={{
         maskImage: "linear-gradient(to bottom, #0005 50%, #000 50%)",
         maskSize: "100% 2px",
-        width:'100%'
+        width: '100%'
       }}
     >
-      <main
-        className="max-w-7xl mx-auto px-4 pr-4 relative min-h-screen "
-        style={{ paddingTop: "-10vh", margin: "auto", width: "100vw", height: "100vh" }}
-      >
-        <div
-          style={{
-            height: "5vh",
-            marginTop: "5vh",
-            position: "relative",
-            top: "3vh",
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-            paddingBottom: "10vh",
-            maxWidth: "100vw",
-        
-          }}
-        >
-          <HyperText  />
-        </div>
-        <ScrollTo setActiveSection={handleClick} />
-        <br />
-        <div
-          className="retro-text flex justify-between md:justify-around md:pl-[0vw] w-full"
-          style={{ paddingTop: "3vh", paddingBottom: "6vh", }}
-        >
-          {["#home", "#stats", "#contact"].map((section) => (
-            <a
-              key={section}
-              href={section}
-              style={{ textDecoration: "none" }}
-              onClick={() => handleClick(section)}
-            >
-              <div
-                className={`flex items-center justify-center border-2 border-primary p-4  ${
-                  activeSection === section ? "bg-primary" : "hover:bg-primary hover:text-tertiary group"
-                } transition duration-300 ease-in`}
-                style={{ height: 10 }}
+      <main className="max-w-7xl mx-auto px-4 relative min-h-screen" style={{ height: "100vh" }}>
+        <div className="flex flex-col items-center pt-8 pb-10 md:pt-8">
+          <div className="mb-10">
+            <HyperText />
+          </div>
+          
+          <ScrollTo setActiveSection={handleClick} />
+          
+          <div className="w-full flex justify-between md:justify-around py-8">
+            {["#home", "#stats", "#contact"].map((section) => (
+              <a
+                key={section}
+                href={section}
+                className="no-underline"
+                onClick={() => handleClick(section)}
               >
-                <button
-                  className={`text-primary text-shadow-custom font-vt323 text-center  text-md md:text-[22px] hover:text-tertiary ${
-                    activeSection === section ? "text-tertiary" : "text-primary"
-                  }`}
+                <div
+                  className={`flex items-center justify-center border-2 border-primary p-4 ${
+                    activeSection === section ? "bg-primary" : "hover:bg-primary hover:text-tertiary group"
+                  } transition duration-300 ease-in`}
+                  style={{ height: 10 }}
                 >
-                  {section === "#home" ? "Home" : section === "#stats" ? "Stats" : "Links"}
-                </button>
-                {activeSection === "selection" }
-              </div>
-            </a>
-          ))}
+                  <button
+                    className={`text-primary text-shadow-custom font-vt323 text-center text-md md:text-[22px] hover:text-tertiary ${
+                      activeSection === section ? "text-tertiary" : "text-primary"
+                    }`}
+                  >
+                    {section === "#home" ? "Home" : section === "#stats" ? "Stats" : "Links"}
+                  </button>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
 
-        <section
-          id="home"
-          className="flex justify-stretch w-fit h-fit md:w-full md:h-fit md:overflow-hidden overflow-y-scroll custom-scrollbar overflow-x-hidden"
-        >
-          
-            <div className="flex flex-col md:flex-row justify-evenly">
-              <div className="border-4 border-primary w-fit h-fit ">
-                <ImageComp />
-              </div>
-              <div className="md:w-[500px] border-2 border-primary p-2">
-                <WordFadeIn />
-              </div>
-              <div className="p-4 border-primary border-2 " >
-                <ProgressBar />
-              </div>
+        <section id="home" className="w-full">
+          <div className="flex flex-col items-center gap-6 md:flex-row md:justify-evenly md:items-start">
+            <div className="border-4 border-primary w-fit">
+              <ImageComp />
             </div>
-         
+            
+            <div className="w-full md:w-[500px] border-2 border-primary p-2">
+              <WordFadeIn />
+            </div>
+            
+            <div className="w-full md:w-auto border-2 border-primary p-4">
+              <ProgressBar />
+            </div>
+          </div>
         </section>
 
-        <section id="stats" className="section" style={{ marginLeft: "0vw" }}>
+        <section id="stats" className="w-full pt-8">
           <StatSide />
         </section>
 
-        <section id="contact" className="section pt-2">
+        <section id="contact" className="w-full pt-8">
           <Contact />
         </section>
       </main>
