@@ -6,8 +6,8 @@ export default function ProgressBar() {
       <div className=' md:overflow-y-hidden space-y-5 overflow-hidden custom-scrollbar md:w-[20vw] pb-2  xs:border-primary xs:border-2'>
         <div>
           <div className="mb-2 flex justify-between items-center">
-            <h3 className="text-m font-semibold retro-text font-vt323 text-primary" style={{paddingLeft:"1vw",}}>Django, Celery, Celery-Beats</h3>
-            <span className="text-m retro-text font-vt323 text-primary">75%</span>
+            <h3 className="text-m font-semibold  font-vt323 text-primary" style={{paddingLeft:"1vw",}}>Django, Celery, Celery-Beats</h3>
+            <span className="text-m  font-vt323 text-primary">75%</span>
           </div>
           <div className="flex w-full h-2 bg-gray-800 rounded-full overflow-hidden" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
             <div className="flex flex-col justify-center rounded-full overflow-hidden bg-[#b89406] text-primary text-center whitespace-nowrap transition duration-500" style={{ width: "75%" }}></div>
@@ -17,8 +17,8 @@ export default function ProgressBar() {
 
         <div>
           <div className="mb-2 flex justify-between items-center">
-            <h3 className="text-m retro-text font-vt323 text-primary" style={{paddingLeft:"1vw",}}> Front-End(HTML, CSS, JS, React)</h3>
-            <span className="text-m retro-text font-vt323 text-primary">80%</span>
+            <h3 className="text-m font-semibold font-vt323 text-primary" style={{paddingLeft:"1vw",}}> Front-End(HTML, CSS, JS, React)</h3>
+            <span className="text-m font-semibold font-vt323 text-primary">80%</span>
           </div>
           <div className="flex w-full h-2 bg-gray-800 rounded-full overflow-hidden" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
             <div className="flex flex-col justify-center rounded-full overflow-hidden bg-[#b89406] text-xs text-white text-center whitespace-nowrap transition duration-500" style={{ width: "80%" }}></div>
@@ -28,8 +28,8 @@ export default function ProgressBar() {
 
         <div>
           <div className="mb-2 flex justify-between items-center">
-            <h3 className="text-m retro-text font-vt323 text-primary" style={{paddingLeft:"1vw",}}> Node.js</h3>
-            <span className="text-m retro-text font-vt323 text-primary">40%</span>
+            <h3 className="text-m font-semibold font-vt323 text-primary" style={{paddingLeft:"1vw",}}> Node.js</h3>
+            <span className="text-m font-semibold font-vt323 text-primary">40%</span>
           </div>
           <div className="flex w-full h-2 bg-gray-800 rounded-full overflow-hidden" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
             <div className="flex flex-col justify-center rounded-full overflow-hidden bg-[#b89406] text-xs text-white text-center whitespace-nowrap transition duration-500" style={{ width: "40%" }}></div>
@@ -40,8 +40,8 @@ export default function ProgressBar() {
 
         <div>
           <div className="mb-2 flex justify-between items-center">
-            <h3 className="text-m font-semibold retro-text font-vt323 text-primary" style={{paddingLeft:"1vw",}}>Python</h3>
-            <span className="text-m retro-text font-vt323 text-primary">85%</span>
+            <h3 className="text-m font-semibold  font-vt323 text-primary" style={{paddingLeft:"1vw",}}>Python</h3>
+            <span className="text-m font-semibold font-vt323 text-primary">85%</span>
           </div>
           <div className="flex w-full h-2 bg-gray-800 rounded-full overflow-hidden" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
             <div className="flex flex-col justify-center rounded-full overflow-hidden bg-[#b89406] text-xs text-white text-center whitespace-nowrap transition duration-500" style={{ width: "85%" }}></div>
@@ -50,8 +50,8 @@ export default function ProgressBar() {
 
         <div>
           <div className="mb-2 flex justify-between items-center">
-            <h3 className="text-m retro-text font-vt323 text-primary" style={{paddingLeft:"1vw",}}>Java</h3>
-            <span className="text-m retro-text font-vt323 text-primary">65%</span>
+            <h3 className="text-m font-semibold font-vt323 text-primary" style={{paddingLeft:"1vw",}}>Java</h3>
+            <span className="text-m font-semibold font-vt323 text-primary">65%</span>
           </div>
           <div className="flex w-full h-2 bg-gray-800 rounded-full overflow-hidden" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
             <div className="flex flex-col justify-center rounded-full overflow-hidden bg-[#b89406] text-xs text-white text-center whitespace-nowrap transition duration-500" style={{ width: "65%" }}></div>
@@ -64,8 +64,8 @@ export default function ProgressBar() {
 
         <div>
           <div className="mb-2 flex justify-between items-center">
-            <h3 className="text-m retro-text font-vt323 text-primary" style={{paddingLeft:"1vw",}}>C Language</h3>
-            <span className="text-m retro-text font-vt323 text-primary">80%</span>
+            <h3 className="text-m font-semibold font-vt323 text-primary" style={{paddingLeft:"1vw",}}>C Language</h3>
+            <span className="text-m font-semibold font-vt323 text-primary">80%</span>
           </div>
           <div className="flex w-full h-2 bg-gray-800 rounded-full overflow-hidden" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
             <div className="flex flex-col justify-center rounded-full overflow-hidden bg-[#b89406] text-xs text-white text-center whitespace-nowrap transition duration-500" style={{ width: "80%" }}></div>

@@ -98,7 +98,7 @@ export function HyperText({
     <div className="flex scale-100 cursor-default overflow-hidden py-2 md:text-2xl font-mono font-bold">
       <AnimatePresence mode="wait">
         <span className="font-system">
-          I AM{" "}
+          HI! I AM{" "}
           {displayText.map((letter, i) => (
             <motion.span
               key={`${currentIndex}-${i}`}

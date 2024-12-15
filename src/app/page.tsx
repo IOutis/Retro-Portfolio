@@ -104,7 +104,7 @@ export default function Home() {
           <StatSide />
         </section>
 
-        <section id="contact" className="section">
+        <section id="contact" className="section pt-2">
           <Contact />
         </section>
       </main>
