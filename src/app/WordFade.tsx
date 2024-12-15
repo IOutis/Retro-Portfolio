@@ -80,7 +80,7 @@ export function WordFadeIn({
       initial="hidden"
       animate="visible"
       className={cn(
-        "font-mono text-left md:text-lg tracking-[-0.02em] text-primary",
+        "font-mono text-justify md:text-lg tracking-[-0.02em] text-primary",
         className,
       )}
     >
