@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <div
-      className="dark max-w-full container old-crt-monitor retro-text font-vt323 w-screen h-full overflow-y-scroll overflow-x-hidden custom-scrollbar md:overflow-hidden"
+      className="dark max-w-full container old-crt-monitor retro-text font-vt323 w-screen h-full overflow-y-scroll overflow-x-hidden custom-scrollbar md:overflow-y-scroll"
       style={{
         maskImage: "linear-gradient(to bottom, #0005 50%, #000 50%)",
         maskSize: "100% 2px",
