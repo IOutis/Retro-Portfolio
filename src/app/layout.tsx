@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import ClickSoundProvider from '@/components/ClickAudio';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} m-0 p-0 w-screen min-h-screen overflow-x-hidden retro-text font-vt323 w-screen h-full overflow-y-scroll overflow-x-hidden custom-scrollbar md:overflow-hidden`}>{children}
-      
+      <body className={`${inter.className} m-0 p-0 w-screen min-h-screen overflow-x-hidden retro-text font-vt323 w-screen h-full overflow-y-scroll overflow-x-hidden custom-scrollbar md:overflow-hidden`}>
+        <ClickSoundProvider>
+          {children}
+        </ClickSoundProvider>
       </body>
     </html>
   );
