@@ -46,7 +46,7 @@ const SkillCard = ({ skill }) => {
               href={skill.githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 hover:text-primary block mt-2"
+              className="text-primary block mt-2 underline"
             >
               GitHub Link
             </a>
