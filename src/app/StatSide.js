@@ -100,7 +100,7 @@ export default function StatSide() {
     const education = [
         {
             name: 'Bachelor of Engineering',
-            description: 'Currently pursuing my second year in Information Technology at Vasavi College of Engineering.',
+            description: 'Currently pursuing my third year in Information Technology at Vasavi College of Engineering.',
             cgpa: 'CGPA : 8.7',
         },
         {
