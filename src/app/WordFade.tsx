@@ -37,7 +37,7 @@ export function WordFadeIn({
   },
   className,
 }: WordFadeInProps) {
-  const text = "Name:\nMd. Mushtaq\n\nCurrent Qualification:\nB.E. II Year I.T.\n\nBrief:\nPassionate and driven, I am always on the lookout for new challenges and opportunities to turn my innovative ideas into impactful projects. With an insatiable curiosity and a dedication to continuous learning, I am eager to apply my knowledge and skills to make a difference. Let's create something extraordinary together!";
+  const text = "Name:\nMd. Mushtaq\n\nCurrent Qualification:\nB.E. III Year I.T.\n\nBrief:\nPassionate and driven, I am always on the lookout for new challenges and opportunities to turn my innovative ideas into impactful projects. With an insatiable curiosity and a dedication to continuous learning, I am eager to apply my knowledge and skills to make a difference. Let's create something extraordinary together!";
 
   // Split the text into lines first
   const lines = text.split('\n');
