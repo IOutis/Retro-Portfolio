@@ -21,11 +21,11 @@ export default function Home() {
   return (
     <div
       className="dark max-w-full container old-crt-monitor retro-text font-vt323 w-screen h-full overflow-y-scroll overflow-x-hidden custom-scrollbar md:overflow-y-scroll"
-      style={{
-        maskImage: "linear-gradient(to bottom, #0005 50%, #000 50%)",
-        maskSize: "100% 2px",
-        width: '100%'
-      }}
+      // style={{
+      //   maskImage: "linear-gradient(to bottom, #0005 50%, #000 50%)",
+      //   maskSize: "100% 2px",
+      //   width: '100%'
+      // }}
     >
       <main className="max-w-7xl mx-auto px-4 relative min-h-screen" style={{ height: "100vh" }}>
         <div className="flex flex-col items-center pt-8 pb-10 md:pt-8">

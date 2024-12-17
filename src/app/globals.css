@@ -79,9 +79,9 @@ body {
     @apply text-shadow-custom;
     color: #ffd52cd5; /* Adjust color to match your theme */
     text-shadow: 
-      0 0 0.5rem #ffd52cb1,
-      0 0 1rem #ffd52c9f,
-      0 0 1.5rem #ffd52c91;
+      0 0 1rem #ffd52cb1,
+      0 0 2rem #ffd52c9f,
+      0 0 2rem #ffd52c91;
   }
 }
 
@@ -95,16 +95,50 @@ body {
       background-position: 0 10000%;
     }
   }
+  @keyframes flicker {
+    0% { opacity: 1.0; }
+    2% { opacity: 0.95; }
+    5% { opacity: 0.98; }
+    100% { opacity: 1.0; }
+  }
 }
 
 @layer components {
   .old-crt-monitor {
-    box-shadow: inset 0px 0px 2rem;
+    @apply relative overflow-hidden min-h-screen;
+    box-shadow: inset 0px 0px 3rem;
     background-image: linear-gradient(0deg, #0000 10%, #ffda4715 100%, #0000 100%);
-    animation: crtAnimation 100s linear infinite;
+    animation: crtAnimation 100s linear infinite, flicker 0.15s infinite; 
     background-size: 100% 80%;
   }
+
+  /* Separate the scanlines into their own class */
+  .crt-scanlines {
+    @apply absolute inset-0 pointer-events-none z-10;
+    background-image: linear-gradient(
+      0deg,
+      transparent 50%,
+      rgba(255, 218, 71, 0.15) 50%
+    );
+    background-size: 100% 4px;
+    animation: scanlines 10s linear infinite;
+  }
+
+  /* RGB split effect */
+  .crt-rgb {
+    @apply absolute inset-0 pointer-events-none z-20;
+    background: linear-gradient(
+      rgba(255, 0, 0, 0.05),
+      rgba(0, 255, 0, 0.05),
+      rgba(0, 0, 255, 0.05)
+    );
+    mix-blend-mode: screen;
+  }
 }
+
+
+/* Add subtle RGB split effect */
+
 
 .hidden-section {
   display: none;
