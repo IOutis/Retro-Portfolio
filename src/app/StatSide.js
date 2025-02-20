@@ -71,7 +71,7 @@ export default function StatSide() {
         {
             name: 'Machine Learning',
             level: 'Basic',
-            description: 'Experience in developing and deploying ML models using popular frameworks, with focus on practical applications and model optimization.'
+            description: 'Stepping into the world of AI and ML. I planned to get real-world exposure by building a project in this domain'
         }
     ];
     const projects = [
