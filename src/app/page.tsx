@@ -49,7 +49,7 @@ export default function Home() {
                   style={{ height: 10 }}
                 >
                   <button
-                    className={`text-primary text-shadow-custom font-vt323 text-center text-md md:text-[22px] hover:text-[#000000] ${
+                    className={` text-shadow-custom font-vt323 text-center text-md md:text-[22px] hover:text-[#000000] ${
                       activeSection === section ? "text-[#000000]" : "text-primary"
                     }`}
                   >
