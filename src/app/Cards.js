@@ -5,8 +5,8 @@ const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-background rounded-lg p-6 max-w-lg w-full mx-4 relative border-primary border-2">
+    <div className="backdrop-blur-sm fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div className=" bg-background rounded-lg p-6 max-w-lg w-full mx-4 relative border-primary border-2">
         <button 
           onClick={onClose}
           className="absolute top-4 right-4 text-md shadow-md"
@@ -25,7 +25,7 @@ const SkillCard = ({ skill }) => {
   return (
     <>
       <div 
-        className="p-4 bg-background rounded-lg shadow-md cursor-pointer hover:shadow-lg transition ease-in-out hover:scale-125 duration-300 border-primary border-2"
+        className="p-4 bg-background shadow-md cursor-pointer hover:shadow-lg transition ease-in-out hover:scale-125 duration-300 border-primary border-2"
         onClick={() => setIsModalOpen(true)}
       >
         <h3 className="font-bold text-md text-primary mb-2">{skill.name}</h3>
@@ -35,7 +35,7 @@ const SkillCard = ({ skill }) => {
       </div>
 
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <div className="space-y-4">
+        <div className="space-y-4 ">
           <h2 className="sm:text-md md:text-lg font-bold">{skill.name}</h2>
           {skill.level && <p className="text-primary">Level: {skill.level}</p>}
           <div className="mt-4">
@@ -60,7 +60,7 @@ const SkillCard = ({ skill }) => {
 
 const Cards = ({ skills = [], category }) => {
   return (
-    <div className="p-6">
+    <div className="px-6">
       <div className="mb-6">
         <h2 className="text-2xl font-bold">{category}</h2>
       </div>

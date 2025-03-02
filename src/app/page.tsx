@@ -1,11 +1,9 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import Typing from "./Typing";
-import Description from "./Description";
 import ScrollTo from "./ScrollTo";
 import StatSide from "./StatSide";
-import ProgressBar from "./ProgressBar";
+import ProgressBar from "./SkillsSummary";
 import ImageComp from "./ImageComp";
 import Contact from "./Contact";
 import { HyperText } from "./HyperText";
@@ -14,8 +12,9 @@ import WordFadeIn from "./WordFade";
 export default function Home() {
   const [activeSection, setActiveSection] = useState("#home");
   
-  const handleClick = (section: React.SetStateAction<string>) => {
+  const handleClick = (section: string) => {
     setActiveSection(section);
+    document.querySelector(section)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -45,13 +44,13 @@ export default function Home() {
               >
                 <div
                   className={`flex items-center justify-center border-2 border-primary p-4 ${
-                    activeSection === section ? "bg-primary" : "hover:bg-primary hover:text-tertiary group"
+                    activeSection === section ? "bg-primary" : "hover:bg-primary text-[#000000] group"
                   } transition duration-300 ease-in`}
                   style={{ height: 10 }}
                 >
                   <button
-                    className={`text-primary text-shadow-custom font-vt323 text-center text-md md:text-[22px] hover:text-tertiary ${
-                      activeSection === section ? "text-tertiary" : "text-primary"
+                    className={`text-primary text-shadow-custom font-vt323 text-center text-md md:text-[22px] hover:text-[#000000] ${
+                      activeSection === section ? "text-[#000000]" : "text-primary"
                     }`}
                   >
                     {section === "#home" ? "Home" : section === "#stats" ? "Stats" : "Links"}

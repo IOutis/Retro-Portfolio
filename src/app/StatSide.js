@@ -1,6 +1,5 @@
 "use client"
 import React, { useState } from 'react';
-import StatsComp from './StatsComp';
 import Cards from './Cards';
 
 export default function StatSide() {
@@ -118,6 +117,7 @@ export default function StatSide() {
     const [mainstr, setMainstr] = useState(strength);
     const [activeCategory, setActiveCategory] = useState('strengths');
     const [menuOpen, setMenuOpen] = useState(false);
+    const [displayCards,setDisplayCards]=useState(true);
 
     const passString = (category) => {
         setActiveCategory(category);
@@ -135,6 +135,11 @@ export default function StatSide() {
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
+        if(window.innerWidth<400)
+            setDisplayCards(!displayCards);
+        else
+            setDisplayCards(true);
+        console.log(window.innerWidth);
     };
 
     const getButtonClasses = (category) => {
@@ -154,7 +159,7 @@ export default function StatSide() {
                     </svg>
                     
                 </div>
-                <div className={`flex flex-col sm:flex md:flex-col ${menuOpen ? 'flex-col' : 'hidden'} `}>
+                <div className={`flex sm:flex xs:my-4 md:flex-col ${menuOpen ? 'flex-col' : 'hidden'} `}>
                     <div id='strengths' className={`flex items-center w-20 md:w-36 justify-center ${getButtonClasses("strengths")}`} onClick={() => passString("strengths")}>
                         <p className='text-sm md:text-xl'>Strengths</p>
                     </div>
@@ -169,9 +174,9 @@ export default function StatSide() {
                     </div>
                 </div>
             </div>
-            <div className="" style={{ maxHeight: "60vh", position: 'relative', zIndex: '1' }}>
+            {displayCards && <div className="" style={{ maxHeight: "60vh", position: 'relative', zIndex: '1' }}>
                 <Cards skills={mainstr} category={activeCategory.toLocaleUpperCase()}></Cards>
-            </div>
+            </div>}
         </div>
     );
 }
